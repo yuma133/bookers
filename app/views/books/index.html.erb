@@ -1,0 +1,36 @@
+<h1>Books</h1>
+
+  <table border="0">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <td><%= link_to "Show", "/books/#{book.id}", class: "option" %></td>
+    <td><%= link_to "Edit", "/books/#{book.id}/edit", class: "option" %></td>
+    <td><%= link_to "Delete", "/books/#{book.id}", class: "option", method: :delete, "data-confirm" => "Are you sure?" %></td>
+  </tr>
+<% end %>
+</table>
+
+<h1>New book</h1>
+<%= form_for(@book, url: "/books") do |f| %>
+<% if @book.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %><p>error</p></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <p class="new-title">Title</p>
+  <%= f.text_field :title %>
+  <p class="new-body">Body</p>
+  <%= f.text_area :body %>
+  <%= f.submit "Create Book", class: "btn" %>
+<% end %>
+

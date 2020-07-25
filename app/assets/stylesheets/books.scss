@@ -1,0 +1,39 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.start-content{
+    margin-left: 25px;
+    line-height: 60px;
+}
+
+table tr{
+    padding: 5px 30px 0px;
+}
+
+table td{
+    padding: 5px 10px;
+}
+
+.option{
+    color: black;
+}
+
+.title{
+    margin: 0;
+}
+
+.body{
+    margin: 13px 0 0 0;
+}
+
+.btn{
+    display: block;
+    margin-top: 13px;
+}
+
+.show-content{
+    font-weight: 1;
+}
+.select{
+    display: inline-block;
+}
